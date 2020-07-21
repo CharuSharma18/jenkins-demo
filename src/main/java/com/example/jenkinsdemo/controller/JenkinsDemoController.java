@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class JenkinsDemoController {
 
-	@RequestMapping("/dev/info")
+	@RequestMapping("/info")
 	public String greetings(@RequestParam(required = false, value = "name") String name) {
 
 		if (name != null)
