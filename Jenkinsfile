@@ -3,21 +3,14 @@ pipeline{
     stages{
         stage('Clone'){
             steps{
-                sh '''
-                git clone https://github.com/CharuSharma18/jenkins-demo.git
-                cd jenkins-demo
-                git checkout $BRANCH_NAME
-                '''
-                
+                sh 'git checkout $BRANCH_NAME'
+                         
             }
         }
         stage('Build'){
             steps{
-                sh '''
-                cd jenkins-demo
-                mvn clean install
-                '''
-            }
+                sh 'mvn clean install'
+                   }
         }
         stage('Deploy'){
             steps{
