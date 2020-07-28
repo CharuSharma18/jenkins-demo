@@ -21,8 +21,10 @@ pipeline{
         }
         stage('Deploy'){
             steps{
+			 withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
                 sh 'java -jar target/*.jar &'
             }
+			}
         }
     }
 }
