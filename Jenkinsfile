@@ -21,11 +21,7 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                sh '''
-                cp -r jenkins-demo/target/*.jar $BRANCH_NAME/
-                java -jar $BRANCH_NAME/*.jar & 
-                rm -rf jenkins-demo
-                '''
+                sh 'java -jar target/*.jar &'
             }
         }
     }
