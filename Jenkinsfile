@@ -21,7 +21,7 @@ pipeline{
         }
 	 stage('Archive'){
 	    steps{
-		    archiveArtifacts artifacts: 'target/jenkins-demo-0.0.1-SNAPSHOT', followSymlinks: false
+		    archiveArtifacts artifacts: 'target/*jar', followSymlinks: false
 	    }
     	}
     }
