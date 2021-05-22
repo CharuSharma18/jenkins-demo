@@ -10,8 +10,7 @@ pipeline{
         stage('Build'){
             steps{
                 sh 'mvn clean install'
-                sh 'cp $HOME/.jenkins/workspace/$JOB_BASE_NAME/target/jenkins-demo-0.0.1-SNAPSHOT $HOME/.jenkins/workspace/$JOB_NAME/'
-	    }
+                }
         }
         stage('Deploy'){
             steps{
@@ -22,7 +21,7 @@ pipeline{
         }
 	 stage('Archive'){
 	    steps{
-		    archiveArtifacts artifacts: 'jenkins-demo-0.0.1-SNAPSHOT', followSymlinks: false
+		    archiveArtifacts artifacts: 'target/jenkins-demo-0.0.1-SNAPSHOT', followSymlinks: false
 	    }
     	}
     }
