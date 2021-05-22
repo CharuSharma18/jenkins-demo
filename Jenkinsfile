@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Build'){
             steps{
-                sh 'mvn clean install'
+                sh 'C:\Users\charu.sharma\Desktop\CICD Demo\apache-maven-3.8.1-bin\apache-maven-3.8.1\bin\mvn clean install'
                    }
         }
         stage('Deploy'){
