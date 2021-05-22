@@ -10,7 +10,7 @@ pipeline{
         stage('Build'){
             steps{
                 sh 'mvn clean install'
-                sh 'cp $HOME/.jenkins/workspace/$JOB_NAME/target/jenkins-demo-0.0.1-SNAPSHOT $HOME/.jenkins/workspace/$JOB_NAME/'
+                sh 'cp $HOME/.jenkins/workspace/$JOB_BASE_NAME/target/jenkins-demo-0.0.1-SNAPSHOT $HOME/.jenkins/workspace/$JOB_NAME/'
 	    }
         }
         stage('Deploy'){
